@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>main_menu</class>
+ <widget class="QMainWindow" name="main_menu">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Main Menu</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* Set the background color for the entire application */
+QMainWindow {
+    background-color: #F5F5F5;
+}
+
+QWidget {
+    background-color: #F5F5F5;
+}
+
+/* Style the header and title */
+QHeaderView::section, QLabel {
+    color: #333333;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Set the background color for the task list area */
+QListView {
+    background-color: #F9F9F9;
+}
+
+/* Alternate background colors for task items */
+QListView::item:alternate {
+    background-color: #ECECEC;
+}
+
+/* Style the buttons */
+QPushButton {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #3D8FD1, stop: 1 #2E7CB5);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #2D9CDB;
+    cursor: pointer;
+}
+
+QPushButton:pressed {
+    background-color: #1F79A7;
+}
+
+/* Style the task priority indicators */
+.QListView::indicator {
+    width: 12px;
+    height: 12px;
+}
+
+.QListView::indicator:checked {
+    background-color: #27AE60;
+}
+
+/* Set the font for the task items */
+QListView::item {
+    font-size: 16px;
+}
+
+/* Style the selected task */
+QListView::item:selected {
+    background-color: #2D9CDB;
+    color: white;
+}
+
+/* Set the font for the task description */
+QListView::item QLabel {
+    font-size: 14px;
+}
+
+/* Style the scrollbars */
+QScrollBar:vertical {
+    background-color: #F9F9F9;
+    width: 12px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #D1D1D1;
+}
+
+QScrollBar::handle:hover:vertical {
+    background-color: #BDBDBD;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical,
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+QScrollBar::add-line:vertical {
+    height: 12px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:vertical {
+    height: 12px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+
+/* Style the scrollbars when hovered */
+QScrollBar:hover:vertical {
+    background-color: #ECECEC;
+}
+
+QScrollBar::add-line:hover:vertical,
+QScrollBar::sub-line:hover:vertical {
+    background: none;
+}
+
+QScrollBar::add-page:hover:vertical,
+QScrollBar::sub-page:hover:vertical {
+    background-color: #ECECEC;
+}
+
+/* Style the scrollbars when pressed */
+QScrollBar:vertical:pressed {
+    background-color: #D1D1D1;
+}
+
+QScrollBar::add-line:vertical:pressed,
+QScrollBar::sub-line:vertical:pressed {
+    background: none;
+}
+
+QScrollBar::add-page:vertical:pressed,
+QScrollBar::sub-page:vertical:pressed {
+    background-color: #D1D1D1;
+}
+
+/* Style the tab widget */
+QTabWidget {
+    background-color: #F9F9F9;
+    border: none;
+}
+
+/* Set the font and size for the tab titles */
+QTabBar::tab {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 16px;
+}
+
+/* Set the color for the unselected tabs */
+QTabBar::tab:!selected {
+    color: #333333;
+    background-color: #ECECEC;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+/* Set the color for the selected tab */
+QTabBar::tab:selected {
+    color: white;
+    background-color: #3D8FD1;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+/* Set the margin and padding for the content area */
+QTabWidget::pane {
+    margin-top: -1px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+/* Style the QLineEdit */
+QLineEdit, QTimeEdit {
+	font: 18pt &quot;MS UI Gothic&quot;;
+    background-color: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    padding: 6px;
+    color: #333333;
+}
+
+/* Style the QLineEdit when focused */
+QLineEdit:focus, QTimeEdit:focus {
+    border-color: #3D8FD1;
+}
+
+/* Style the placeholder text */
+QLineEdit::placeholder {
+    color: #999999;
+}
+
+/* Style the QSlider */
+QSlider {
+    background-color: transparent;
+    height: 10px;
+}
+
+/* Style the groove of the QSlider */
+QSlider::groove:horizontal {
+    background-color: #ECECEC;
+    border-radius: 5px;
+}
+
+/* Style the handle of the QSlider */
+QSlider::handle:horizontal {
+    background-color: #3D8FD1;
+    border: none;
+    height: 16px;
+    width: 16px;
+    margin: -3px 0;
+    border-radius: 8px;
+}
+
+/* Style the handle of the QSlider when pressed or hovered */
+QSlider::handle:horizontal:hover,
+QSlider::handle:horizontal:pressed {
+    background-color: #2D9CDB;
+}
+
+/* Style the tick marks of the QSlider */
+QSlider::sub-page:horizontal {
+    background-color: #3D8FD1;
+    border-radius: 5px;
+}
+
+/* Style the tick marks of the QSlider when pressed or hovered */
+QSlider::sub-page:horizontal:hover,
+QSlider::sub-page:horizontal:pressed {
+    background-color: #2D9CDB;
+}
+
+QCheckBox {
+    spacing: 5px;
+}
+
+QCheckBox::indicator {
+    width: 13px;
+    height: 13px;
+}
+
+QTableView {
+	font: 16pt &quot;MS UI Gothic&quot;;
+}
+
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>10</number>
+    </property>
+    <property name="leftMargin">
+     <number>10</number>
+    </property>
+    <property name="topMargin">
+     <number>10</number>
+    </property>
+    <property name="rightMargin">
+     <number>10</number>
+    </property>
+    <property name="bottomMargin">
+     <number>10</number>
+    </property>
+    <item>
+     <widget class="QLabel" name="window_title_label">
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Task Scheduler</string>
+      </property>
+      <property name="scaledContents">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="indent">
+       <number>-3</number>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>MS UI Gothic</family>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Rounded</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="add_tasks_tab">
+       <attribute name="title">
+        <string>Add Tasks</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <property name="spacing">
+         <number>9</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="task_name_input_label">
+          <property name="text">
+           <string>Task Name:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="task_name_input"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="duration_input_label">
+          <property name="text">
+           <string>Duration (in minutes):</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="duration_input"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="priority_input_label">
+          <property name="text">
+           <string>Priority:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="priority_slider">
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>5</number>
+          </property>
+          <property name="pageStep">
+           <number>1</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="invertedAppearance">
+           <bool>false</bool>
+          </property>
+          <property name="invertedControls">
+           <bool>false</bool>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksBelow</enum>
+          </property>
+          <property name="tickInterval">
+           <number>1</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="input_response_label">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 0, 0);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="add_task_button">
+          <property name="text">
+           <string>Add Task</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="reset_button">
+          <property name="text">
+           <string>Reset</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="view_tasks">
+       <attribute name="title">
+        <string>View Tasks</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QTableView" name="task_table_view"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="unscheduled_label">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="task_settings_tab">
+       <attribute name="title">
+        <string>Task Settings</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QLabel" name="day_start_label">
+          <property name="text">
+           <string>Day Start Time:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTimeEdit" name="day_start_input">
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="time">
+           <time>
+            <hour>9</hour>
+            <minute>0</minute>
+            <second>0</second>
+           </time>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="day_end_label">
+          <property name="text">
+           <string>Day End Time:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTimeEdit" name="day_end_input">
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="timeSpec">
+           <enum>Qt::LocalTime</enum>
+          </property>
+          <property name="time">
+           <time>
+            <hour>18</hour>
+            <minute>0</minute>
+            <second>0</second>
+           </time>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="break_start_label">
+          <property name="text">
+           <string>Break Start Time:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTimeEdit" name="break_start_input">
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="time">
+           <time>
+            <hour>12</hour>
+            <minute>0</minute>
+            <second>0</second>
+           </time>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="break_end_label">
+          <property name="text">
+           <string>Break End Time:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTimeEdit" name="break_end_input">
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::UpDownArrows</enum>
+          </property>
+          <property name="time">
+           <time>
+            <hour>13</hour>
+            <minute>0</minute>
+            <second>0</second>
+           </time>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="settings_save_response_label">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="save_settings_button">
+          <property name="text">
+           <string>Save Settings</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

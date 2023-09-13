@@ -10,6 +10,10 @@ This project is a task scheduling application with a user-friendly interface tha
 
 ## Screenshots
 
+![Adding a task](https://github.com/ChristianGleitzman/TaskScheduler/blob/imgs/add_task.PNG)
+![Saving Settings](https://github.com/ChristianGleitzman/TaskScheduler/blob/imgs/save_settings.PNG)
+![Viewing Tasks](https://github.com/ChristianGleitzman/TaskScheduler/blob/imgs/view_task.PNG)
+
 ## Possible Improvements
 - Efficient Scheduling Algorithm: The current scheduling algorithm is functional but might not always be the most efficient. Improving the algorithm to optimize task scheduling can be a complex task, but it could lead to better utilization of available time and resources.
 - Task Dependencies: The current scheduler is more useful for tasks that are independent from each other. The algorithm could be further improved to consider tasks that may depend on one another, as to not schedule a task before one it depends on.
